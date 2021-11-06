@@ -76,7 +76,7 @@ yarn start
         <img src="https://avatars.githubusercontent.com/u/21150988?s=400&v=4" width="100px;" alt="Luís Henrique Machado"/>
         <br />
         <sub>
-          <b>Henrique Tavares</b>
+          <b>Luís Henrique Machado</b>
         </sub>
        </a>
        <br />
