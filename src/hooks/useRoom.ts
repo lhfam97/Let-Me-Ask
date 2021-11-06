@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { database } from "../services/firebase";
+import { ref, onValue, off } from "firebase/database";
 import { useAuth } from "./useAuth";
 
 type QuestionType = {
@@ -40,12 +41,14 @@ export function useRoom(roomId: string) {
   const [title, setTitle] = useState("");
 
   useEffect(() => {
-    const roomRef = database.ref(`rooms/${roomId}`);
+    const roomRef = ref(database, `rooms/${roomId}`);
 
-    roomRef.on("value", (room) => {
+    onValue(roomRef, (room) => {
+      // if (room.exists()) {
       const databaseRoom = room.val();
 
-      const firebaseQuestions: FirebaseQuestions = databaseRoom.questions ?? {};
+      const firebaseQuestions: FirebaseQuestions =
+        databaseRoom?.questions ?? {};
 
       const parsedQuestions = Object.entries(firebaseQuestions).map(
         ([key, value]) => {
@@ -62,12 +65,13 @@ export function useRoom(roomId: string) {
           };
         }
       );
-      setTitle(databaseRoom.title);
+      setTitle(databaseRoom?.title);
       setQuestions(parsedQuestions);
 
       return () => {
-        roomRef.off("value");
+        off(roomRef);
       };
+      // }
     });
   }, [roomId, user?.id]);
 

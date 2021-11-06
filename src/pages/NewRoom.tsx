@@ -7,6 +7,7 @@ import { Button } from "../components/Button";
 import { database } from "../services/firebase";
 import "../styles/auth.scss";
 import { useAuth } from "../hooks/useAuth";
+import { ref, push } from "@firebase/database";
 
 export function NewRoom() {
   const history = useHistory();
@@ -14,14 +15,14 @@ export function NewRoom() {
   const { user } = useAuth();
   async function handleCreateRoom(event: FormEvent) {
     event.preventDefault();
-    console.log(user);
+
     if (newRoom.trim() === "") {
       return;
     }
 
-    const roomRef = database.ref("rooms");
+    const roomRef = ref(database, "rooms");
 
-    const firebaseRoom = await roomRef.push({
+    const firebaseRoom = await push(roomRef, {
       title: newRoom,
       authorId: user?.id,
     });

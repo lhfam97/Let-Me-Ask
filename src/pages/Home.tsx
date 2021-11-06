@@ -9,6 +9,7 @@ import { useAuth } from "../hooks/useAuth";
 import "../styles/auth.scss";
 import { FormEvent, useState } from "react";
 import { database } from "../services/firebase";
+import { onValue, ref } from "@firebase/database";
 
 export function Home() {
   const history = useHistory();
@@ -27,18 +28,21 @@ export function Home() {
     if (roomCode.trim() === "") {
       return;
     }
-    const roomRef = await database.ref(`rooms/${roomCode}`).get();
 
-    if (!roomRef.exists()) {
-      alert("Room does not exists.");
-      return;
-    }
+    const roomRef = ref(database, `rooms/${roomCode}`);
 
-    if (roomRef.val().endedAt) {
-      alert("Room already closed.");
-      return;
-    }
-    history.push(`/rooms/${roomCode}`);
+    onValue(roomRef, (room) => {
+      if (!room.exists()) {
+        alert("Room does not exists.");
+        return;
+      }
+
+      if (room.val().endedAt) {
+        alert("Room already closed.");
+        return;
+      }
+      history.push(`/rooms/${roomCode}`);
+    });
   }
   return (
     <div id="page-auth">

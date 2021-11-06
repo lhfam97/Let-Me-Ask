@@ -9,6 +9,7 @@ import { FormEvent, useEffect, useState } from "react";
 import { useAuth } from "../hooks/useAuth";
 import { database } from "../services/firebase";
 import { useRoom } from "../hooks/useRoom";
+import { child, get, push, ref, remove } from "@firebase/database";
 
 type RoomParams = {
   id: string;
@@ -24,10 +25,10 @@ export function Room() {
   const { title, questions } = useRoom(roomId);
 
   useEffect(() => {
-    const roomRef = database.ref(`'rooms/${roomId}`);
+    const dbRef = ref(database);
 
-    roomRef.get().then((room) => {
-      if (room.val().end) {
+    get(child(dbRef, `rooms/${roomId}`)).then((room) => {
+      if (!room.val()) {
         history.push("/");
       }
     });
@@ -51,8 +52,10 @@ export function Room() {
       isAnswered: false,
       isHighlighted: false,
     };
+    // await database.ref(`rooms/${roomId}/questions`).push(question);
 
-    await database.ref(`rooms/${roomId}/questions`).push(question);
+    const questionsRef = ref(database, `rooms/${roomId}/questions`);
+    await push(questionsRef, question);
 
     setNewQuestion("");
   }
@@ -62,11 +65,17 @@ export function Room() {
     likeId: string | undefined
   ) {
     if (likeId) {
-      await database
-        .ref(`rooms/${roomId}/questions/${questionId}/likes/${likeId}`)
-        .remove();
+      const likeRef = ref(
+        database,
+        `rooms/${roomId}/questions/${questionId}/likes/${likeId}`
+      );
+      await remove(likeRef);
     } else {
-      await database.ref(`rooms/${roomId}/questions/${questionId}/likes`).push({
+      const likeRef = ref(
+        database,
+        `rooms/${roomId}/questions/${questionId}/likes`
+      );
+      await push(likeRef, {
         authorId: user?.id,
       });
     }

@@ -1,3 +1,4 @@
+import { ref, remove, update } from "firebase/database";
 import logoImg from "../assets/images/logo.svg";
 
 import { RoomCode } from "../components/RoomCode";
@@ -26,26 +27,30 @@ export function AdminRoom() {
   const { title, questions } = useRoom(roomId);
 
   async function handleEndRoom() {
-    await database.ref(`rooms/${roomId}`).update({
+    const roomRef = ref(database, `rooms/${roomId}`);
+    update(roomRef, {
       endedAt: new Date(),
     });
+
     history.push("/");
   }
 
   async function handleDeleteQuestion(questionId: string) {
-    console.log(`rooms/${roomId}/question/${questionId}`);
     if (window.confirm("Tem  certeza que você deseja excluir esta pergunta?")) {
-      await database.ref(`rooms/${roomId}/questions/${questionId}`).remove();
+      const roomRef = ref(database, `rooms/${roomId}/questions/${questionId}`);
+      remove(roomRef);
     }
   }
   async function handleCheckQuestionAsAnswered(questionId: string) {
-    await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+    const roomRef = ref(database, `rooms/${roomId}/questions/${questionId}`);
+    update(roomRef, {
       isAnswered: true,
     });
   }
 
   async function handleHighlightQuestionAnswered(questionId: string) {
-    await database.ref(`rooms/${roomId}/questions/${questionId}`).update({
+    const roomRef = ref(database, `rooms/${roomId}/questions/${questionId}`);
+    update(roomRef, {
       isHighlighted: true,
     });
   }
