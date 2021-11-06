@@ -52,7 +52,7 @@ Este projeto foi feito utilizando as seguintes tecnologias:
 ## 1. Clone o Repositório
 
 ```bash
-git@github.com:tavareshenrique/let-me-ask-nlw.git
+git@github.com:lhfam97/Let-Me-Ask.git
 ```
 
 ## 2. Instale as Dependencias
