@@ -1,46 +1,103 @@
-# Getting Started with Create React App
+<p align="center">
+   <img src="https://raw.githubusercontent.com/lhfam97/Let-Me-Ask/f85fbd65b9ed692e2e3f0c401536c734cafee8ca/src/assets/images/logo.svg" alt="Let Me Ask" width="280"/>
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+   <a href="https://www.linkedin.com/in/lhfam97/">
+      <img alt="Luis Machado" src="https://img.shields.io/badge/-Luis Machado-E859F9?style=flat&logo=Linkedin&logoColor=white" />
+   </a>
+ <img alt="Repository size" src="https://img.shields.io/github/repo-size/lhfam97/Let-Me-Ask?color=9C5AFC">
 
-## Available Scripts
+  <a aria-label="Last Commit" href="https://github.com/lhfam97/Let-Me-Ask/commits/master">
+    <img alt="Last commit on GitHub" src="https://img.shields.io/github/last-commit/lhfam97/Let-Me-Ask?color=E859F9">
+  </a>
 
-In the project directory, you can run:
+  <img alt="License" src="https://img.shields.io/badge/license-MIT-E859F9">
+</p>
 
-### `yarn start`
+> <b>Let Me Ask</b> é um projeto construído em React com TypeScript e Firebase, durante <b>Next Level Week #Together</b> da [Rocketseat](https://github.com/Rocketseat). Esse projeto tem como função criar salas para que outras pessoas possam se cadastrar utilizando sua conta do Google e criar perguntas, para que o administrador da sala possa vir a responder.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<div align="center">
+  <sub>O <strong>Let Me Ask</strong> foi desenvolvido com 💜 pelo
+    <a href="https://github.com/lhfam97">Luís Henrique Machado</a>
+  </sub>
+</div>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+# :pushpin: Conteúdo
 
-### `yarn test`
+- [Tecnologias](#computer-tecnologias)
+- [Executando](#construction_worker-executando)
+- [Autores](#computer-autores)
+- [Licença](#closed_book-licença)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Demonstração
 
-### `yarn build`
+<!-- <div>
+  <img src="https://raw.githubusercontent.com/lhfam97/Let-Me-Ask/main/src/assets/previews/Home.png" alt="Home Page" width="400" />
+  <img src="https://raw.githubusercontent.com/lhfam97/Let-Me-Ask/main/src/assets/previews/Room.png" alt="Room Page" width="400" />
+</div> -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# :computer: Tecnologias
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Este projeto foi feito utilizando as seguintes tecnologias:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [React](https://pt-br.reactjs.org/)
+- [Typescript](https://www.typescriptlang.org/)
+- [Firebase](https://firebase.google.com)
+- [Classnames](https://github.com/JedWatson/classnames#readme)
+- [Sass](https://sass-lang.com/)
 
-### `yarn eject`
+# :construction_worker: Executando
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 1. Clone o Repositório
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git@github.com:tavareshenrique/let-me-ask-nlw.git
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 2. Instale as Dependencias
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```bash
+yarn
+```
 
-## Learn More
+## 5. Inicie o Projeto
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+yarn start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+# :computer: Autores
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="http://github.com/lhfam97/">
+        <img src="https://avatars.githubusercontent.com/u/21150988?s=400&v=4" width="100px;" alt="Luís Henrique Machado"/>
+        <br />
+        <sub>
+          <b>Henrique Tavares</b>
+        </sub>
+       </a>
+       <br />
+       <a href="https://www.linkedin.com/in/luís-henrique-machado-98037a127/" title="Linkedin">@luis-henrique-machado</a>
+       <br />   
+    </td>
+    <td align="center">
+      <a href="http://github.com/lhfam97/">
+        <img src="https://avatars.githubusercontent.com/u/21150988?s=400&v=4" width="100px;" alt="Luís Henrique Machado"/>
+        <br />
+        <sub>
+          <b>Rocketseat</b>
+        </sub>
+       </a>
+       <br />
+       <a href="https://github.com/Rocketseat" title="Linkedin">@Rocketseat</a>
+    
+    </td>
+  </tr>
+</table>
+
+<!-- # :closed_book: Licença
+
+Este projeto está sob a licença [MIT](./LICENSE). -->
