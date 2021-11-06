@@ -52,7 +52,7 @@ Este projeto foi feito utilizando as seguintes tecnologias:
 ## 1. Clone o Repositório
 
 ```bash
-git@github.com:tavareshenrique/let-me-ask-nlw.git
+git@github.com:lhfam97/Let-Me-Ask.git
 ```
 
 ## 2. Instale as Dependencias
@@ -76,7 +76,7 @@ yarn start
         <img src="https://avatars.githubusercontent.com/u/21150988?s=400&v=4" width="100px;" alt="Luís Henrique Machado"/>
         <br />
         <sub>
-          <b>Henrique Tavares</b>
+          <b>Luís Henrique Machado</b>
         </sub>
        </a>
        <br />
