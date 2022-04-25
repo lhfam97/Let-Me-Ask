@@ -93,7 +93,6 @@ yarn start
        </a>
        <br />
        <a href="https://github.com/Rocketseat" title="Linkedin">@Rocketseat</a>
-    
     </td>
   </tr>
 </table>
